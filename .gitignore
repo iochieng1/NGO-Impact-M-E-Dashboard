@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.env
+.streamlit/secrets.toml
+# Real field data never goes into git - see docs/kenya-case-study.md (Data Protection Act 2019)
+data/raw/*
+!data/raw/.gitkeep

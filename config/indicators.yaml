@@ -1,0 +1,116 @@
+# Results framework (logframe) for the case-study programme.
+#
+# Programme: "Imarisha Jamii" (Swahili: "Strengthen the Community"), a
+# hypothetical integrated WASH, education and livelihoods programme run by an
+# NGO in six Kenyan counties, 2025-2027. Replace with your own logframe.
+#
+# Field reference
+#   id           stable key used in every data file
+#   level        impact | outcome | output
+#   sector       wash | education | livelihoods | cross-cutting
+#   unit         percent | count | kes (Kenya shillings)
+#   direction    increase | decrease  (which way is "good")
+#   frequency    quarterly | annual
+#   disaggregate dimensions the value is reported by (besides county)
+#   source       where the number comes from (see docs/kenya-case-study.md)
+#   alignment    national / global frameworks the indicator reports into
+
+programme:
+  name: Imarisha Jamii
+  start: 2025-01-01
+  end: 2027-12-31
+  currency: KES
+  focus_counties: [3, 10, 15, 23, 42, 47]  # Kilifi, Marsabit, Kitui, Turkana, Kisumu, Nairobi
+
+indicators:
+  # ---------------------------------------------------------------- WASH
+  - id: WASH-OC1
+    name: Households using a basic drinking-water source within 30 minutes round trip
+    level: outcome
+    sector: wash
+    unit: percent
+    direction: increase
+    frequency: annual
+    disaggregate: []
+    source: Household survey (KoboToolbox), compared with KNBS KDHS county estimates
+    alignment: [SDG 6.1.1, CIDP water sector, Vision 2030 social pillar]
+
+  - id: WASH-OP1
+    name: Water points constructed or rehabilitated and functional
+    level: output
+    sector: wash
+    unit: count
+    direction: increase
+    frequency: quarterly
+    disaggregate: []
+    source: Engineer completion certificates + functionality check form
+    alignment: [CIDP water sector]
+
+  - id: WASH-OP2
+    name: Water User Associations trained in O&M and tariff collection
+    level: output
+    sector: wash
+    unit: count
+    direction: increase
+    frequency: quarterly
+    disaggregate: []
+    source: Training attendance register
+    alignment: [Water Act 2016]
+
+  # ----------------------------------------------------------- Education
+  - id: EDU-OC1
+    name: Girls transitioning from primary to junior secondary in target schools
+    level: outcome
+    sector: education
+    unit: percent
+    direction: increase
+    frequency: annual
+    disaggregate: []
+    source: School records cross-checked against NEMIS
+    alignment: [SDG 4.1, Competency Based Education transition]
+
+  - id: EDU-OP1
+    name: Learners receiving scholarships or sanitary-pad support
+    level: output
+    sector: education
+    unit: count
+    direction: increase
+    frequency: quarterly
+    disaggregate: [sex]
+    source: Beneficiary register
+    alignment: [SDG 4.5]
+
+  # --------------------------------------------------------- Livelihoods
+  - id: LIV-OC1
+    name: Average monthly savings per VSLA member
+    level: outcome
+    sector: livelihoods
+    unit: kes
+    direction: increase
+    frequency: quarterly
+    disaggregate: []
+    source: VSLA ledger submissions (monthly, via field officers)
+    alignment: [SDG 1.4, BETA financial inclusion]
+
+  - id: LIV-OP1
+    name: Active members of Village Savings & Loans Associations
+    level: output
+    sector: livelihoods
+    unit: count
+    direction: increase
+    frequency: quarterly
+    disaggregate: [sex]
+    source: VSLA registration + quarterly attendance
+    alignment: [SDG 5.a]
+
+  # ------------------------------------------------------- Cross-cutting
+  - id: CC-OC1
+    name: Community feedback cases resolved within 30 days
+    level: outcome
+    sector: cross-cutting
+    unit: percent
+    direction: increase
+    frequency: quarterly
+    disaggregate: []
+    source: Feedback & complaints log (SMS short-code / hotline)
+    alignment: [Core Humanitarian Standard 5]
