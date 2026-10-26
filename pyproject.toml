@@ -1,0 +1,10 @@
+[project]
+name = "ngo-impact-me-dashboard"
+version = "0.1.0"
+description = "Monitoring & Evaluation dashboard for NGO programmes - Kenya case study"
+requires-python = ">=3.10"
+license = "MIT"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
